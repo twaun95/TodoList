@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.loadTasks()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -81,11 +82,8 @@ class ViewController: UIViewController {
             guard let isComplete = $0["isComplete"] as? Bool else {return nil}
             return Task(title: title, isComplete: isComplete)
         }
-        
     }
-    
 }
-
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
